@@ -3,7 +3,7 @@
 
 # 🚨프로젝트 명
 모두 모이자, MOMO <br>
-(momo2gather.com).
+[프로젝트 링크](momo2gather.com).
 # 🚨프로젝트 일정 및 인원
 2024년 7월 15일 ~ 9월 12일 <br>
 9주 소요 <br>
