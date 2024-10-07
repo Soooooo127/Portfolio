@@ -2,8 +2,8 @@
 안녕하세요, JAVA 백엔드 개발자 김지수입니다.
 
 # 🚨프로젝트 명
-모두 모이자, MOMO <br>
-[프로젝트 링크](http://momo2gather.com/member/welcome).
+[모두 모이자, MOMO](http://momo2gather.com/member/welcome)
+
 # 🚨프로젝트 일정 및 인원
 2024년 7월 15일 ~ 9월 12일 <br>
 9주 소요 <br>
