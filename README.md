@@ -21,7 +21,8 @@ html , css, js<br>
 j 쿼리 <br>
 
 # 🚨ERD
-![MomoERD ver1 1 1](https://github.com/user-attachments/assets/9247134a-a507-4aa2-a7e3-9ce197e76f57)
+![MomoERD ver1 1 1](https://github.com/user-attachments/assets/1f4de842-c053-4456-a8a7-f211ca36a0b4)
+
 
 
 # 🚨핵심 기능
