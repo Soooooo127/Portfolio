@@ -44,11 +44,18 @@ oauth
  ## 접은 내용
  접은 내용
 </details>
-## 접기 끝
+
 
 
 - 채팅에 대한 트러블 슈팅
 채팅 했더니 @jsonignore 어노테이션 붙였더니 가능
+
+<details>
+ <summary>접기/펼치기</summary>
+
+ ## 접은 내용
+ 접은 내용
+</details>
 
 
 # 🚨그 외 트러블 슈팅
