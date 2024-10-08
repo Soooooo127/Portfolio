@@ -32,7 +32,6 @@ https://github.com/JasmineLah/Momo.git
 oauth
 친구
 채팅 
-src/main/java/com/momo/chatting 
 이미지
 
 
