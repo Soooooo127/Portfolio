@@ -9,7 +9,7 @@
  1인 가구를 위한 맛집정보와 함께 타인과 상호작용 할 수 있는 커뮤니티 서비스를 제공하는 웹사이트 입니다.
 
 
-[MOMO 사이트](http://momo2gather.com/member/welcome) <br><br><br>
+[MOMO 웹사이트](http://momo2gather.com/member/welcome) <br><br><br>
 
 
 
@@ -116,7 +116,7 @@
 
 
 ## 📁 팀 프로젝트 레파지토리 확인
-[MOMO 레파지토리 확인하기](https://github.com/Soooooo127/PROJECT-MOMO.git)
+[MOMO Repository 확인하기](https://github.com/Soooooo127/PROJECT-MOMO.git)
 
 <br><br><br>
 ## 📁 Contact
