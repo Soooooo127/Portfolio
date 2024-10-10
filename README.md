@@ -57,7 +57,8 @@ oauth
 <details>
  <summary>수정 전 코드</summary>
 
- ##  set 컬렉션 사용한 코드 넣기 
+ ## ㅇㅇㅇ
+ friend/FriendService.java
 </details>
 
 <details>
