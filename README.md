@@ -68,7 +68,7 @@ oauth
 <details>
  <summary>수정 후 코드</summary>
 
- # FriendService 클래스 수정 
+ ## FriendService 클래스 수정 
  
  
     public void createFriend(String myid, Member friendMemeber) {		
@@ -78,9 +78,19 @@ oauth
 	 this.memberRepository.save(mymember);
 		 }
 ## Friend.html 
-	
+
+
  
-	
+ <li class="nav-item dropdown">
+	<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" th:if="${freePosting.membernick != null}" th:text="${freePosting.membernick}"></a>
+		<div sec:authorize="isAuthenticated()" th:if="${freePosting.author.memberid != null}">
+			<div class="dropdown-menu" th:if="${#authentication.getPrincipal().getUsername != freePosting.author.memberid}">
+				<a class="dropdown-item" href="#" data-bs-toggle="modal" th:attr="data-bs-target=${'#profile'+ freePosting.author.no}">프로필 보기</a>
+				<a class="dropdown-item" th:if="${!#lists.contains(member.friend, freePosting.author) and #authentication.getPrincipal().getUsername() != freePosting.author.memberid}"
+			th:href="@{|/friend/create/${freePosting.author.no}|}" onclick="alert('친구 추가 완료');">친구 추가</a>
+			</div>
+		</div>
+
 
 </details>
 
