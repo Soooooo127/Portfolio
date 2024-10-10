@@ -80,6 +80,7 @@ oauth
 ## Friend.html 
 
 
+![freePosting_list](https://github.com/user-attachments/assets/b421ef86-d737-4254-83cc-4a6dd59ad2db)
 
 
 </details>
