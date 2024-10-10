@@ -14,14 +14,22 @@
  
 
 # 🚨사용기술
-- 백엔드
-자바, 스프링부트, 스프링 시큐리티, 롬복, jpa hibnate, MySQL<br>
 
-- 프론트엔드
-html , css, js<br>
-타임리프<br>
-부트스트랩<br>
-j 쿼리 <br>
+### 백엔드
+- Java
+- Spring Boot
+- Spring Security
+- lombok
+- JPA Hibnate
+- MySQL
+
+### 프론트엔드
+- HTML
+- CSS
+- JS
+- Thymeleaf
+- BootStrap
+- JQuery
 
 # 🚨ERD
 ![MomoERD ver1 1 1](https://github.com/user-attachments/assets/1f4de842-c053-4456-a8a7-f211ca36a0b4)
