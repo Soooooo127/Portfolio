@@ -32,7 +32,7 @@
 - CSS
 - JS
 - Thymeleaf
-- BootStrap
+- Bootstrap
 - JQuery
 
 ## 📁 ERD
