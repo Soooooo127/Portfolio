@@ -5,16 +5,16 @@
 
 [모두 모이자, MOMO](http://momo2gather.com/member/welcome)
 
-주제 선정 이유
+프로젝트 한 줄 설명 : 1인 가구를 위한 맛집정보와 함께 타인과 상호작용 할 수 있는 커뮤니티 서비스를 제공<br>
 
 
 ## 🚨팀 프로젝트 일정 및 인원
-프로젝트 일정<br>
-2024년 7월 15일 ~ 2024년 9월 12일 <br>
-9주 소요 <br>
-![momo 프젝 일정](https://github.com/user-attachments/assets/15151a42-95b9-4c11-b051-6695cd882b7c)
+- 프로젝트 일정<br>
++ 2024년 7월 15일 ~ 2024년 9월 12일 <br>
++ 총 9주 소요 <br>
++ ![momo 프젝 일정](https://github.com/user-attachments/assets/15151a42-95b9-4c11-b051-6695cd882b7c)
 
-팀 구성 : 지원자 외 5명<br>
+- 팀 프로젝트 인원 : 지원자 외 5명 <br>
  
 
 ## 🚨사용기술
