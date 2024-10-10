@@ -24,7 +24,7 @@
 - Java
 - Spring Boot
 - Spring Security
-- JPA Hibnate
+- JPA Hibernate
 - MySQL
 
 ### 프론트엔드
