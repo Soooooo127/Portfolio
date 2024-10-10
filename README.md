@@ -115,10 +115,9 @@
 <br><br><br>
 
 
-## 📁 팀 프로젝트 Repository 
-[MOMO Repository](https://github.com/Soooooo127/PROJECT-MOMO.git)
+## 📁 팀 프로젝트 Repository
+[MOMO Repository](https://github.com/Soooooo127/PROJECT-MOMO.git) <br>
 
-<br>
 ## 📁 Contact
 Email : wltn125@naver.com
 
