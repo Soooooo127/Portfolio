@@ -63,8 +63,9 @@ oauth
  
 </details>
 
-- 그래서 list 컬렉션으로 변경하여 구현 계획대로 진행하고자 했습니다.
-- list 컬렉션은 중복이 허용 되기 때문에 컨트롤러에서 중복제거 로직을 생각했으나, 유저가 조금 더 직관적으로 보기 쉽게 친구등록이 이미 된 사람은 친구 추가시 추가버튼을 가렸습니다.
+- 그래서 list 컬렉션으로 변경하여 구현 계획대로(친구 추가순으로 목록 보이기) 진행하고자 했습니다.
+- list 컬렉션은 중복이 허용 되기 때문에 컨트롤러에서 중복제거 로직을 생각했습니다.
+- 유저에게 조금 더 직관적으로 보게 하기 위해 친구등록이 이미 된 사람은 친구 추가버튼이 노출되지 않도록 thymeleaf로 처리했습니다. (프론트에서 해결)
 <details>
  <summary>수정 후 코드</summary>
 
@@ -77,23 +78,25 @@ oauth
          mymember.getFriend().add(friendMemeber); //친구객체를 list 컬렉션에 저장 
 	 this.memberRepository.save(mymember);
 		 }
-## Friend.html 
+## freePosting_list.html 
 
+친구 추가 기능은 닉네임이 노출 되는 모든 곳에서 가능하도록 구현했습니다. <br>
+대표적으로 freePosting 을 참고해주시기 바랍니다.<br>
 
 ![freePosting_list](https://github.com/user-attachments/assets/b421ef86-d737-4254-83cc-4a6dd59ad2db)
 
+구현 페이지입니다.
+친구 추가 전
+
+![친구추가 전](https://github.com/user-attachments/assets/1c6fc5ae-768f-494e-9503-56c067356c45)
+
+친구 추가 후
+![친구 추가 후](https://github.com/user-attachments/assets/95a43033-5326-40af-9169-34bff0603739)
+
 
 </details>
 
 
 
-- 채팅에 대한 트러블 슈팅
-채팅 했더니 @jsonignore 어노테이션 붙였더니 가능
 
-<details>
- <summary>접기/펼치기</summary>
-
- ## 접은 내용
- 접은 내용
-</details>
 
