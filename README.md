@@ -5,7 +5,8 @@
 
 ## 📁 팀 프로젝트 명
 
-> <h4> 모두모이자, MOMO </h4> <br> [모두모이자, MOMO](http://momo2gather.com/member/welcome) <br><br>
+> #### 모두모이자, MOMO
+[MOMO 사이트](http://momo2gather.com/member/welcome) <br><br>
 1인 가구를 위한 맛집정보와 함께 타인과 상호작용 할 수 있는 커뮤니티 서비스를 제공하는 웹사이트 입니다. 
 
 
