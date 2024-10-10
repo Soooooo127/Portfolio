@@ -63,12 +63,12 @@ oauth
  
 </details>
 
--그래서 list 컬렉션으로 변경하여 구현 계획대로 진행하고자 했습니다.
-- list 컬렉션은 중복이 허용 되기 때문에 컨트롤러에서 로직을 생각했으나, 유저가 조금 더 직관적으로 보기 쉽게 친구등록이 이미 된 사람은 친구 추가시 추가버튼을 가렸습니다.
+- 그래서 list 컬렉션으로 변경하여 구현 계획대로 진행하고자 했습니다.
+- list 컬렉션은 중복이 허용 되기 때문에 컨트롤러에서 중복제거 로직을 생각했으나, 유저가 조금 더 직관적으로 보기 쉽게 친구등록이 이미 된 사람은 친구 추가시 추가버튼을 가렸습니다.
 <details>
  <summary>수정 후 코드</summary>
 
- ## FriendService 클래스 수정 
+ # FriendService 클래스 수정 
  
  
     public void createFriend(String myid, Member friendMemeber) {		
@@ -77,6 +77,7 @@ oauth
          mymember.getFriend().add(friendMemeber); //친구객체를 list 컬렉션에 저장 
 	 this.memberRepository.save(mymember);
 		 }
+## Friend.html 
 	
  
 	
