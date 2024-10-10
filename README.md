@@ -66,21 +66,13 @@ oauth
 <details>
  <summary>수정 후 코드</summary>
 
- ## 최종적으로 완료된 코드 넣기 
- //친구추가
-	public void createFriend(String myid, Member friendMemeber) {
-		
-		  Optional<Member> me = this.memberRepository.findBymemberid(myid); //내 아이디 저장
+ ## friend 클래스 수정 
+ 
+ 
+    public void createFriend(String myid, Member friendMemeber) {		
+      		Optional<Member> me = this.memberRepository.findBymemberid(myid); //내 아이디 저장
 		 Member mymember = me.get(); //내 정보 가져와서 member 타입으로 객체 생성
-		
-		 //친구 중복제거
-		 /*
-		 if( mymember.getFriend().contains(friendMemeber)) {
-			throw new DataNotFoundException("이미 등록된 친구입니다");
-		}; */
-		
 		 mymember.getFriend().add(friendMemeber); //친구객체를 list 컬렉션에 저장 
-		 
 		 this.memberRepository.save(mymember);
 		 }
 	
