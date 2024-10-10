@@ -57,8 +57,10 @@ oauth
 <details>
  <summary>수정 전 코드</summary>
 
- ## ㅇㅇㅇ
- friend/FriendService.java
+
+ ![스크린샷(19)](https://github.com/user-attachments/assets/2c41acef-0fe2-43bc-8aa9-72b304362fe1)
+
+ 
 </details>
 
 <details>
