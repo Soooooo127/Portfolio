@@ -116,7 +116,7 @@
 
 
 ## 📁 팀 프로젝트 Repository 
-[MOMO Repository 입니다.](https://github.com/Soooooo127/PROJECT-MOMO.git)
+[MOMO Repository](https://github.com/Soooooo127/PROJECT-MOMO.git)
 
 <br><br><br>
 ## 📁 Contact
