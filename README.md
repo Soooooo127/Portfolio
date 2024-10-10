@@ -112,4 +112,4 @@ oauth
 
 
 ## 팀 프로젝트 레파지토리 확인
-링크 추가 하기
+[MOMO 레파지토리 확인하기](https://github.com/Soooooo127/PROJECT-MOMO.git)
