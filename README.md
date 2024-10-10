@@ -67,69 +67,7 @@ oauth
  <summary>수정 후 코드</summary>
 
  ## 최종적으로 완료된 코드 넣기 
- package com.momo.friend;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
-
-import com.momo.member.Member;
-import com.momo.member.MemberRepository;
-
-import lombok.RequiredArgsConstructor;
-
-@Service
-@RequiredArgsConstructor
-public class FriendService {
-	
-	private final MemberRepository memberRepository;	
-	
-	//친구추가
-	public void createFriend(String myid, Member friendMemeber) {
-		
-		  Optional<Member> me = this.memberRepository.findBymemberid(myid); //내 아이디 저장
-		 Member mymember = me.get(); //내 정보 가져와서 member 타입으로 객체 생성
-		 mymember.getFriend().add(friendMemeber); //친구객체를 set 컬렉션에 저장 
-		 this.memberRepository.save(mymember);		
-	}
-		
-	//친구 목록
-	public List<Member> friendList(String memberid){
-	
-		
-		Optional<Member> temp = this.memberRepository.findBymemberid(memberid); //아이디 검색
-		Member member = temp.get(); //member 타입으로 객체 생성
-		
-		Set<Member> setList = new HashSet<>();
-		setList = member.getFriend(); 
-		List<Member> temp2 = new ArrayList<>(setList); //리스트 타입으로 변환
-
-		temp2.sort(new Comparator<Member>() {	//정렬
-			@Override
-			public int compare(Member m1, Member m2) {
-				return m1.getNo() - m2.getNo();
-			} 			
-		});
-		
-		
-		temp2.forEach(System.out :: println); //:: 는 메소드 참조
-		return temp2;
-	
-	}
-		
-		
-		
-
-
-	
-}
+ 
 	
 
 </details>
