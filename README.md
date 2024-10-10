@@ -116,5 +116,5 @@
 ## 📁 Contact
 Email : wltn125@naver.com
 
-Github : [Github](https://github.com/Soooooo127)
+Github : [김지수 Github](https://github.com/Soooooo127)
 
