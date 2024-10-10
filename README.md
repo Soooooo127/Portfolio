@@ -52,7 +52,7 @@ oauth
 - 코드를 최소화 하기 위해 중복 저장 안하는 set컬렉션 사용했습니다.
 - set 컬렉션 특징이 순서 없이 저장하기 때문에 랜덤으로 출력되는 점을 알았습니다.
 - set 컬렉션을 list로 변환 후 정렬 하도록 로직을 구성했습니다.
-- 결과로 회원가입 순서대로 친구목록에 출력되며, 누가 먼저 가입했는지 유저가 알게 되서 list 컬렉션으로 변겅 함
+- 결과로 user의 id를 통해 정렬해서 회원가입 순서대로 친구목록에 출력되며, 유저들이 회원가입 순서를 유추할 수 있을 문제점도 발겼했습니다.
 
 <details>
  <summary>수정 전 코드</summary>
@@ -63,17 +63,19 @@ oauth
  
 </details>
 
+-그래서 list 컬렉션으로 변경하여 구현 계획대로 진행하고자 했습니다.
+- list 컬렉션은 중복이 허용 되기 때문에 컨트롤러에서 로직을 생각했으나, 유저가 조금 더 직관적으로 보기 쉽게 친구등록이 이미 된 사람은 친구 추가시 추가버튼을 가렸습니다.
 <details>
  <summary>수정 후 코드</summary>
 
- ## friend 클래스 수정 
+ ## FriendService 클래스 수정 
  
  
     public void createFriend(String myid, Member friendMemeber) {		
-      		Optional<Member> me = this.memberRepository.findBymemberid(myid); //내 아이디 저장
-		 Member mymember = me.get(); //내 정보 가져와서 member 타입으로 객체 생성
-		 mymember.getFriend().add(friendMemeber); //친구객체를 list 컬렉션에 저장 
-		 this.memberRepository.save(mymember);
+      	Optional<Member> me = this.memberRepository.findBymemberid(myid); //내 아이디 저장
+	 Member mymember = me.get(); //내 정보 가져와서 member 타입으로 객체 생성 
+         mymember.getFriend().add(friendMemeber); //친구객체를 list 컬렉션에 저장 
+	 this.memberRepository.save(mymember);
 		 }
 	
  
