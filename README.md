@@ -3,7 +3,7 @@
 
 ## 🚨팀 프로젝트 명
 
-[모두 모이자, MOMO](http://momo2gather.com/member/welcome) ___
+[모두 모이자, MOMO](http://momo2gather.com/member/welcome)
 
 1인 가구를 위한 맛집정보와 함께 타인과 상호작용 할 수 있는 커뮤니티 서비스를 제공<br>
 
