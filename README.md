@@ -119,8 +119,13 @@
 [프로젝트 Repository](https://github.com/Soooooo127/PROJECT-MOMO.git) <br><br>
 
 
-## 📁 국비수업
-국비 수업으로 어떤 걸 공부했는지 적기
+## 📁 국가기관 전략 산업 훈련(풀스택 Java 개발자)
+이 과정을 수료하기 위해 하루 8시간씩 6개월 과정을 수료함<br>
+배운 내용<br>
+java 기초<br>
+DB (RDBMS)<br>
+MVC 패턴 아키텍처 spring + jsp, <br>
+spring boot <br>
 
 
 
