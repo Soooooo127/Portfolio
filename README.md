@@ -124,8 +124,9 @@
 배운 내용<br>
 java 기초<br>
 DB (RDBMS)<br>
-MVC 패턴 아키텍처 spring + jsp, <br>
-spring boot <br>
+MVC 패턴으로 게시판 만들기 <br>
+- spring + jsp 사용하여 게시판 만들기 <br>
+- spring boot + thymeleaf 사용하여 게시판 만들기 <br>
 
 
 
