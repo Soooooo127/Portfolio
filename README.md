@@ -121,12 +121,12 @@
 
 ## 📁 국가기관 전략 산업 훈련(풀스택 Java 개발자)
 이 과정을 수료하기 위해 하루 8시간씩 6개월 과정을 수료함<br>
-배운 내용<br>
-java 기초<br>
-DB (RDBMS)<br>
-MVC 패턴으로 게시판 만들기 <br>
-- spring + jsp 사용하여 게시판 만들기 <br>
-- spring boot + thymeleaf 사용하여 게시판 만들기 <br>
+#### 배운 내용<br>
+- java 기초<br>
+- DB (RDBMS)<br>
+- MVC 패턴으로 게시판 만들기 <br>
+	- spring + jsp 사용하여 게시판 만들기 <br>
+	- spring boot + thymeleaf 사용하여 게시판 만들기 <br>
 
 
 
