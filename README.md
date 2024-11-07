@@ -117,39 +117,38 @@
 
 ### 채팅 기능 구현 시 문제 해결 경험
 
-💡 도전적
+✅ 도전적
 - 1:1 실시간 채팅으로 계획
 - WebSocket 및 STOMP 이해: 처음 다뤄보는 개념이기 때문에 실시간 메세지 처리에 대한 이해 필요
 - STOMP에서 '주제(Topic)'와 '구독(Subscribe)' 개념이 생소했음, 실시간 메시징 구현을 위해 WebSocket 연결과 STOMP 프로토콜을 통해 메시지를 송수신하는 흐름을 학습하기 위해 기존 구현된 자료들을 분석
-- 
+- 기존 구현된 WebSocket 및 STOMP 코드를 동일하게 구현해보며 이해 ⬇️
+	
+<details>
+ <summary>WebSocketConfig</summary>
 
-	
-	<details>
-	 <summary>WebSocketConfig</summary>
-	
-		@Configuration
-		@EnableWebSocketMessageBroker
-		public class WebsocketConfig implements WebSocketMessageBrokerConfigurer{
-		@Override
-		public void registerStompEndpoints(StompEndpointRegistry registry) {
-			
-			//stomp 접속 url -> /ws/chat
-			registry.addEndpoint("/ws/chat")   //연결될 엔드 포인트
-			.setAllowedOriginPatterns("*")
-			.withSockJS();   //SocketJS 를 연결한다는 설정
-		}
-		@Override
-	    public void configureMessageBroker(MessageBrokerRegistry registry) {
-	
-			//메세지를 구독하는 요청 url -> 메세지 받을 때
-		registry.enableSimpleBroker("/queue", "/topic");
-	
-		//메세지를 발행하는 요청 url -> 메세지를 보낼 때
-		registry.setApplicationDestinationPrefixes("/app");
-		}
-	
-		} 
-	</details>
+	@Configuration
+	@EnableWebSocketMessageBroker
+	public class WebsocketConfig implements WebSocketMessageBrokerConfigurer{
+	@Override
+	public void registerStompEndpoints(StompEndpointRegistry registry) {
+		
+		//stomp 접속 url -> /ws/chat
+		registry.addEndpoint("/ws/chat")   //연결될 엔드 포인트
+		.setAllowedOriginPatterns("*")
+		.withSockJS();   //SocketJS 를 연결한다는 설정
+	}
+	@Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+
+		//메세지를 구독하는 요청 url -> 메세지 받을 때
+	registry.enableSimpleBroker("/queue", "/topic");
+
+	//메세지를 발행하는 요청 url -> 메세지를 보낼 때
+	registry.setApplicationDestinationPrefixes("/app");
+	}
+
+	} 
+</details>
 
   <details>
 
@@ -306,7 +305,7 @@ MessageController
 
 
 
-💡 DB 연결의 필요성
+✅ DB 연결의 필요성
 - 문제 발생 : 서버 재시작 시 기존 주고 받았던 메세지가 사라지지 않도록 데이터베이스에 채팅 기록을 저장해야 함을 파악
 - 해결 과정
 	- 채팅 기록 저장: 채팅 메시지를 데이터베이스에 저장하기 위해 JPA와 Hibernate를 활용하여 MySQL 데이터베이스와 연동
@@ -317,10 +316,10 @@ MessageController
 
   	
 
-💡UI 개선
+✅ UI 개선
 - JavaScrip를 사용하여 1:1 채팅의 대표적인 UI로 디자인하여 유저가 채팅시 직관적이게 확인가능하도록 로직을 구성
 
-💡 결과 
+✅ 결과 
 - 실시간 1:1 채팅 구현
 
 
