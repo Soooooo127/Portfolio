@@ -265,7 +265,7 @@ MessageController
 
 
 </details>
-
+<details>
 <summary> ChatService </summary>
 		
 	@Slf4j
