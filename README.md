@@ -121,9 +121,85 @@
 - 1:1 실시간 채팅으로 계획
 - WebSocket 및 STOMP 이해: 처음 다뤄보는 개념이기 때문에 실시간 메세지 처리에 대한 이해 필요
 - STOMP에서 '주제(Topic)'와 '구독(Subscribe)' 개념이 생소했음, 실시간 메시징 구현을 위해 WebSocket 연결과 STOMP 프로토콜을 통해 메시지를 송수신하는 흐름을 학습하기 위해 기존 구현된 자료들을 분석
-- 연습한 웹소켓 
+- 연습한 웹소켓
+
+
 <details>
- <summary> 코드</summary>
+ <summary>WebSocketConfigurat</summary>
+
+	@Configuration
+	@EnableWebSocketMessageBroker
+	public class WebsocketConfig implements WebSocketMessageBrokerConfigurer{
+	@Override
+	public void registerStompEndpoints(StompEndpointRegistry registry) {
+		
+		//stomp 접속 url -> /ws/chat
+		registry.addEndpoint("/ws/chat")   //연결될 엔드 포인트
+		.setAllowedOriginPatterns("*")
+		.withSockJS();   //SocketJS 를 연결한다는 설정
+	}
+	@Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+
+		//메세지를 구독하는 요청 url -> 메세지 받을 때
+        registry.enableSimpleBroker("/queue", "/topic");
+
+        //메세지를 발행하는 요청 url -> 메세지를 보낼 때
+        registry.setApplicationDestinationPrefixes("/app");
+    	}
+
+	} 
+</details>
+
+  <details>
+
+<summary> DTO </summary>
+
+ ChatRoom
+
+	@Getter
+	@Setter
+	@NoArgsConstructor
+	@Entity
+	public class ChatRoom {
+
+	@Id
+	private String roomId; //방 번호
+	private String roomName; //방 이름
+	
+	//채팅 방 생성
+	public static ChatRoom create(String name) {
+		ChatRoom room = new ChatRoom();
+		room.roomId = UUID.randomUUID().toString();  //랜덤으로 받을 번호
+		room.roomName = name;
+		return room;
+	}
+	}
+
+ChatMessage
+
+	@Getter
+	@Setter
+	@NoArgsConstructor
+	@AllArgsConstructor
+	public class ChatMessage {
+	//메세지 타입 : 입장, 채팅
+	public enum MessageType{
+		ENTER, TALK
+	}
+	private MessageType type; //메세지 타입
+	private String roomId;  // 방번호
+	private String sender;  // 메세지 보낸 사람
+	private String message;  // 메세지
+	}
+
+
+
+ 
+</details>
+
+<details>
+ <summary> Controller </summary>
 	
 
 ChatController
@@ -170,9 +246,61 @@ ChatController
 	
 	}
 
- 
+MessageController
 
- 
+	@RestController
+	@RequiredArgsConstructor
+	public class MessageController {
+	private final ChatService chatService;
+	private final SimpMessageSendingOperations sendingOperations;
+	
+	@MessageMapping("/chat/message")
+	public void enter(ChatMessage message) {
+		if(ChatMessage.MessageType.ENTER.equals(message.getType())) {
+			message.setMessage(message.getSender() + "님이 입장하였습니다");
+		}
+		sendingOperations.convertAndSend("/topic/chat/room/"+message.getRoomId(),message);
+	}
+	
+	}
+
+
+</details>
+
+<summary> ChatService </summary>
+		
+	@Slf4j
+	@RequiredArgsConstructor
+	@Service
+	public class ChatService {
+	private Map<String, ChatRoom> chatRooms;
+	@PostConstruct   //해당 어노테이션은 의존성 주입이 이루어진 후 초기화 작업이 필요한 메소드에 사용됨
+	private void init() {
+		chatRooms = new LinkedHashMap<>();
+	}
+	
+	//채팅방 불러오기
+	public List<ChatRoom> findAllRoom(){
+		
+		//채팅방 최근 생성 순으로 반환
+		List<ChatRoom> result = new ArrayList<>(chatRooms.values());
+		Collections.reverse(result);
+		return result;	
+	}
+	//채팅방 하나 불러오기
+	public ChatRoom findById(String roomId) {
+		return chatRooms.get(roomId);
+	}
+	
+	
+	
+	//채팅방 생성
+	public ChatRoom createRoom(String name) {
+		ChatRoom chatRoom = ChatRoom.create(name);
+		chatRooms.put(chatRoom.getRoomId(), chatRoom);
+		return chatRoom ;
+	}	
+	} 
 </details>
 
 
