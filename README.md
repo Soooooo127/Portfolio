@@ -119,17 +119,73 @@
 
 💡 도전적
 - 1:1 실시간 채팅으로 계획
-- WebSocket 및 STOMP 이해: 처음 다뤄보는 개념이기 때문에 실시간 메세지 처리에 대한 이해가 필요했음
+- WebSocket 및 STOMP 이해: 처음 다뤄보는 개념이기 때문에 실시간 메세지 처리에 대한 이해 필요
 - STOMP에서 '주제(Topic)'와 '구독(Subscribe)' 개념이 생소했음, 실시간 메시징 구현을 위해 WebSocket 연결과 STOMP 프로토콜을 통해 메시지를 송수신하는 흐름을 학습하기 위해 기존 구현된 자료들을 분석
-- 연습한 웹소켓 캡쳐
+- 연습한 웹소켓 
+<details>
+ <summary> 코드</summary>
+	
+
+ChatController
+
+	@RequiredArgsConstructor
+	@Controller
+	@RequestMapping("/chat")
+	public class ChatController {	
+ 	private final ChatService chatService;
+
+	//채팅 리스트 화면
+	@GetMapping("/room")
+	public String rooms(Model model) {
+		return "/chat/room";
+	}
+	
+	//채팅방 생성
+	@PostMapping("/room")
+	@ResponseBody
+	public ChatRoom createRoom(@RequestParam(value = "name") String name) {
+		return chatService.createRoom(name);
+	}
+
+	//모든 채팅방 목록 반환
+	@GetMapping("/rooms")
+	@ResponseBody
+	public List<ChatRoom> room(){
+		return chatService.findAllRoom();
+	}
+	
+	//채팅방 입장 화면
+	@GetMapping("/room/enter/{roomId}")
+	public String roomDetail(Model model, @PathVariable("roomId") String roomId){
+		model.addAttribute("roomId", roomId);
+		return "/chat/roomdetail";
+	}
+	
+	//특정 채팅방 조회
+	@GetMapping("/room/{roomId}")
+	@ResponseBody
+	public ChatRoom roomInfo(@PathVariable("roomId") String roomId) {
+		return chatService.findById(roomId);
+	}
+	
+	}
+
+ 
+
+ 
+</details>
 
 
-💡 DB연결의 필요성
-- 서버 재시작 시 기존 주고 받았던 메세지가 사라지지 않도록 데이터베이스에 채팅 기록을 저장해야 함을 파악
-- 채팅 기록 저장: 채팅 메시지를 데이터베이스에 저장하기 위해 JPA와 Hibernate를 활용하여 MySQL 데이터베이스와 연동
-- 메세지 테이블과 채팅방 테이블을 분리하여 정규화 작업
-- 채팅방 ID ,메세지 ID를 사용하여 유저ID 와 관계 설정
+
+
+💡 DB 연결의 필요성
+- 문제 발생 : 서버 재시작 시 기존 주고 받았던 메세지가 사라지지 않도록 데이터베이스에 채팅 기록을 저장해야 함을 파악
+- 해결 과정
+	- 채팅 기록 저장: 채팅 메시지를 데이터베이스에 저장하기 위해 JPA와 Hibernate를 활용하여 MySQL 데이터베이스와 연동
+	- 메세지 테이블과 채팅방 테이블을 분리하여 정규화 작업
+	- 채팅방 ID ,메세지 ID를 사용하여 유저ID 와 관계 설정
   
+- 결과: 채팅 기록 저장 및 조회 가능 : 채팅 메세지가 DB에 저장되어 해당 닉네임을 가진 유저와 이전에 나눈 대화를 확인 가능하게 함 
 
   	
 
