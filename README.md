@@ -40,8 +40,8 @@
 - JQuery  <br><br>
 
 ## 📁 ERD
-![MomoERD ver1 1 1](https://github.com/user-attachments/assets/1f4de842-c053-4456-a8a7-f211ca36a0b4) <br><br><br>
 
+![MomoERD ver1 1 1](https://github.com/user-attachments/assets/03c2f539-77ab-4d4f-a620-b0aa46e47a1a) <br><br><br>
 
 
 ## 📁 핵심 기능
